@@ -1,7 +1,9 @@
 package controllers
 
 import (
+	"api/src/banco"
 	"api/src/modelos"
+	"api/src/repositorios"
 	"encoding/json"
 	"io"
 	"log"
@@ -19,6 +21,14 @@ func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 	if erro := json.Unmarshal(corpoRequest, &usuario); erro != nil {
 		log.Fatal(erro)
 	}
+
+	db, erro := banco.Conectar()
+	if erro != nil {
+		log.Fatal(erro)
+	}
+
+	repositorios := repositorios.NovoRepositorioDeUsuarios(db)
+	repositorios.Criar(usuario)
 }
 
 // BuscarUsuarios - Busca todos os usuários
