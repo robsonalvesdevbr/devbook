@@ -10,8 +10,8 @@ import (
 )
 
 var (
-	StringConexaoBanco = ""
-	Porta              = 0
+	stringConexaoBanco = ""
+	porta              = 0
 )
 
 // Carregar - Ccarrega as configurações do sistema - variaveis de ambiente
@@ -22,14 +22,24 @@ func Carregar() {
 		log.Fatal(erro)
 	}
 
-	Porta, erro = strconv.Atoi(os.Getenv("API_PORTA"))
+	porta, erro = strconv.Atoi(os.Getenv("API_PORTA"))
 	if erro != nil {
-		Porta = 9000
+		porta = 9000
 	}
 
-	StringConexaoBanco = fmt.Sprintf("%s:%s@/%s?charset=utf8&parseTime=True&loc=Local",
+	stringConexaoBanco = fmt.Sprintf("%s:%s@/%s?charset=utf8&parseTime=True&loc=Local",
 		os.Getenv("DB_USUARIO"),
 		os.Getenv("DB_SENHA"),
 		os.Getenv("DB_NOME"),
 	)
+}
+
+// StringConexaoBanco - Retorna a string de conexão com o banco de dados
+func StringConexaoBanco() string {
+	return stringConexaoBanco
+}
+
+// Porta - Retorna a porta que a API irá subir
+func Porta() int {
+	return porta
 }
