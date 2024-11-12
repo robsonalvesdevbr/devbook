@@ -1,2 +1,0 @@
-# devbook
-Curso de Go
