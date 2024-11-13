@@ -1,6 +1,6 @@
 # _**Curso de Go - Construindo a API**_
 
-### :pushpin: **- Criação e instalação de dependências**
+### :pushpin: **Criação e instalação de dependências**
 
 ```powershell
 > go mod init api
@@ -10,11 +10,11 @@
 > go mod tidy
 ```
 
-### :pen: **- Observações:**
+### :pen: **Observações:**
 
 > O comando **_[go mod tidy]_** é utilizado em projetos Go para limpar e organizar o módulo atual, removendo dependências não utilizadas e baixando quaisquer pacotes necessários que estejam faltando. Ele ajuda a manter o arquivo go.mod e o go.sum atualizados e otimizados.
 
-### :pushpin: **- Criação do banco de dados**
+### :pushpin: **Criação do banco de dados**
 
 ```powershell
 > docker run --name mysql-container `
@@ -29,7 +29,7 @@
 > docker exec -it mysql-container mysql -ugolang -psenhagogolang devbook
 ```
 
-### :pushpin: **- Criação de tabelas do banco de dados**
+### :pushpin: **Criação de tabelas do banco de dados**
 
 ```sql
 CREATE DATABASE IF NOT EXISTS devbook;
