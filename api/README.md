@@ -10,11 +10,11 @@
 > go mod tidy
 ```
 
-### :pushpin: **- Observações:**
+### :pen: **- Observações:**
 
 > O comando **_[go mod tidy]_** é utilizado em projetos Go para limpar e organizar o módulo atual, removendo dependências não utilizadas e baixando quaisquer pacotes necessários que estejam faltando. Ele ajuda a manter o arquivo go.mod e o go.sum atualizados e otimizados.
 
-### **- Criação do banco de dados**
+### :pushpin: **- Criação do banco de dados**
 
 ```powershell
 > docker run --name mysql-container `
