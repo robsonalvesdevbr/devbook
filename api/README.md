@@ -12,7 +12,9 @@
 
 ### :pen: **Observações:**
 
-> O comando **_[go mod tidy]_** é utilizado em projetos Go para limpar e organizar o módulo atual, removendo dependências não utilizadas e baixando quaisquer pacotes necessários que estejam faltando. Ele ajuda a manter o arquivo go.mod e o go.sum atualizados e otimizados.
+> O comando **[ [go mod tidy][2] ]** é utilizado em projetos Go para limpar e organizar o módulo atual, removendo dependências não utilizadas e baixando quaisquer pacotes necessários que estejam faltando. Ele ajuda a manter o arquivo go.mod e o go.sum atualizados e otimizados.
+
+> Podemos usar o [Scalar][1] para criar modelo visal de acesso aos endpoints
 
 ### :pushpin: **Criação do banco de dados**
 
@@ -46,3 +48,10 @@ CREATE TABLE usuarios (
     PRIMARY KEY (ID)
 );
 ```
+
+[1]: https://scalar.com "Interface Open Source do OpenApi"
+[2]: https://go.dev/ref/mod "Go Modules Reference"
+[3]: https://github.com/gorilla/mux "Gorilla/mux"
+[4]: https://github.com/joho/godotenv "GoDotEnv"
+[5]: https://github.com/go-sql-driver/mysql "Go-MySQL-Driver"
+[6]: https://www.robsonalves.dev.br "Web site Robson Candido dos Santos Alves"
