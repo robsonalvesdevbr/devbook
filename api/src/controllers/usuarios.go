@@ -5,6 +5,7 @@ import (
 	"api/src/modelos"
 	"api/src/repositorios"
 	"encoding/json"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -13,7 +14,7 @@ import (
 // CriarUsuario - Cria um usuário
 func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 	corpoRequest, erro := io.ReadAll(r.Body)
-	if erro == nil {
+	if erro != nil {
 		log.Fatal(erro)
 	}
 
@@ -28,7 +29,12 @@ func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 	}
 
 	repositorios := repositorios.NovoRepositorioDeUsuarios(db)
-	repositorios.Criar(usuario)
+	usuarioId, erro := repositorios.Criar(usuario)
+	if erro != nil {
+		log.Fatal(erro)
+	}
+
+	w.Write([]byte(fmt.Sprintf("Usuário inserido com sucesso! ID: %d", usuarioId)))
 }
 
 // BuscarUsuarios - Busca todos os usuários
