@@ -14,7 +14,7 @@ var (
 	porta              = 0
 )
 
-// Carregar - Ccarrega as configurações do sistema - variaveis de ambiente
+// Carregar - Carrega as configurações do sistema - variáveis de ambiente
 func Carregar() {
 	var erro error
 

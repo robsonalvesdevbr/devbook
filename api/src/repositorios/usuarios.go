@@ -15,8 +15,8 @@ func NovoRepositorioDeUsuarios(db *sql.DB) *usuarios {
 }
 
 // Criar - Insere um usuário no banco de dados
-func (reppositorio usuarios) Criar(usuario modelos.Usuario) (uint64, error) {
-	statement, erro := reppositorio.db.Prepare("insert into usuarios (nome, nick, email, senha) values (?, ?, ?, ?)")
+func (repositorio usuarios) Criar(usuario modelos.Usuario) (uint64, error) {
+	statement, erro := repositorio.db.Prepare("insert into usuarios (nome, nick, email, senha) values (?, ?, ?, ?)")
 	if erro != nil {
 		return 0, erro
 	}
@@ -29,7 +29,6 @@ func (reppositorio usuarios) Criar(usuario modelos.Usuario) (uint64, error) {
 	}
 
 	ultimoIDInserido, erro := resultado.LastInsertId()
-
 	if erro != nil {
 		return 0, erro
 	}
